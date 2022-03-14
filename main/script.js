@@ -42,4 +42,5 @@ function fcos(x,n){
     return cos;
 }
 
-
+let result= document.querySelector("#sinresult");
+result.innerText = fcos(4,7);
