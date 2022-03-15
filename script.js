@@ -1,6 +1,5 @@
 
 //math
-
 function factorial(x){
     var result =1;
     for(var i=1;i<=x;i++){
@@ -93,5 +92,62 @@ resultcos.textContent = fcos(x,n);
 coserror.textContent = cosError(parseInt(n));
 }
 
+
+//graph visualization
+document.getElementById('wykres').onclick = () =>{
+    let nsin = document.getElementById('ninput').value;
+    let ncos = document.getElementById('ninputcos').value;
+
+    const labels =[] ;
+    const datasetsin = [];
+    const datasetcos = [];
+    for(let i =-6;i<=6;i+=0.5){
+        labels.push(i);
+    }
+    
+    for(let i=-6;i<=6;i+=0.5){
+        datasetsin.push(fsin(i,parseInt(nsin)));
+        datasetcos.push(fcos(i,parseInt(ncos)));
+    }
+    
+    
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'sin(x)',
+          backgroundColor: 'rgb(148, 0, 211)',
+          borderColor: 'rgb(148, 0, 211)',
+          data: datasetsin,
+        },
+         {
+            label: 'cos(x)',
+            backgroundColor: 'rgb(220, 20, 60)',
+            borderColor: 'rgb(220, 20, 60)',
+            data: datasetcos,
+
+
+
+             }   
+        ]
+      };
+    
+      const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            
+            }
+      };
+    
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+    
+    
+
+
+}
 
 
