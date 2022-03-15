@@ -1,5 +1,5 @@
 
-
+//math
 
 function factorial(x){
     var result =1;
@@ -42,5 +42,56 @@ function fcos(x,n){
     return cos;
 }
 
+function sinError(n){
+
+     if(n%2==0)
+     n++;
+     else
+     n+=2;
+      
+    return Math.pow(Math.PI,n+1)/factorial(n);
+}
+
+function cosError(n){
+
+    if(n%2==0)
+    n+=2;
+    else
+    n++;
+     
+   return Math.pow(Math.PI,n+1)/factorial(n);
+}
+
+
+
+//functionality of website
 let result= document.querySelector("#sinresult");
-result.innerText = fcos(4,7);
+
+let sinerror = document.querySelector("#sinerror");
+
+let resultcos= document.querySelector("#cosresult");
+
+let coserror = document.querySelector("#coserror");
+
+document.getElementById('obliczsin').onclick = () =>{
+    let x = document.getElementById('xinput').value;
+    let n = document.getElementById('ninput').value;
+
+result.textContent = fsin(x,n);
+
+sinerror.textContent=sinError(parseInt(n));
+
+
+}
+
+document.getElementById('obliczcos').onclick = () =>{
+    let x = document.getElementById('xinputcos').value;
+    let n = document.getElementById('ninputcos').value;
+
+resultcos.textContent = fcos(x,n);
+
+coserror.textContent = cosError(parseInt(n));
+}
+
+
+
