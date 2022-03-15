@@ -14,4 +14,16 @@ h2{
 }
 p{
     padding: auto;
+    font-size: 20px;
+}
+
+
+.row{
+    padding-left: 3%;
+}
+
+.btn{
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
