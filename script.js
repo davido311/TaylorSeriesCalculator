@@ -115,8 +115,8 @@ document.getElementById('wykres').onclick = () =>{
         labels: labels,
         datasets: [{
           label: 'sin(x)',
-          backgroundColor: 'rgb(148, 0, 211)',
-          borderColor: 'rgb(148, 0, 211)',
+          backgroundColor: 'rgb(255, 215, 0)',
+          borderColor: 'rgb(255, 215, 0)',
           data: datasetsin,
         },
          {
